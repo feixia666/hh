@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page, index) in pages" :key="index">
                 <div class="icon" v-for="item in page" :key="item.id">
                     <div class="icon-img">
@@ -63,7 +63,10 @@ export default {
                 id: '0011',
                 imgUrl: '//s.qunarzz.com/homenode/images/touchheader/piao.png',
                 desc: '热门景点'
-            }]
+            }],
+            swiperOption: {
+                autoplay: false
+            },
         }
     },
     computed: {

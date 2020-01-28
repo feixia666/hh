@@ -23,7 +23,6 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl'
 .title{
-    margin-top: 0.2rem;
     line-height: 0.8rem;
     background: #eee;
     text-indent: 0.2rem;

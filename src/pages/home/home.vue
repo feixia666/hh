@@ -18,6 +18,7 @@ import HomeWeekend from './components/Weekend'
 import axios from 'axios'
 
 export default {
+    name: 'home',
     components: {
         HomeHeader,
         HomeSwiper,
@@ -27,7 +28,13 @@ export default {
     },
     methods: {
         getHomeInfo () {
-            axios.get('/public/index.json').then(res => {
+            axios.get('/static/index.json').then(res => {
+                console.log(res)
+            })
+            axios.get('/api/mock/city.json').then(res => {
+                console.log(res)
+            })
+            axios.get('/static/mock/city.json').then(res => {
                 console.log(res)
             })
         }
