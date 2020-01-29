@@ -2,11 +2,11 @@
     <div>
         <div class="title">热门推荐</div>
         <ul>
-            <li class="item border-bottom">
-                <img class="item-img" src="//gw.alicdn.com/bao/uploaded/i1/16969666/TB2xjEopVXXXXXJXXXXXXXXXXXX_!!16969666.jpg_500x500q90.jpg">
+            <li class="item border-bottom" v-for="item in list" :key="item.id">
+                <img class="item-img" :src="item.imgUrl">
                 <div class="item-info">
-                    <p class="item-title">长隆海洋世界</p>
-                    <p class="item-desc">阿萨德都是发生的广都是发生的广都是发生的广泛的个，阿斯蒂芬个</p>
+                    <p class="item-title">{{item.title}}</p>
+                    <p class="item-desc">{{item.desc}}</p>
                     <button class="item-button">查看详情</button>
                 </div>
             </li>
@@ -16,7 +16,9 @@
 
 <script>
 export default {
-    
+    props: {
+        list: Array
+    }
 }
 </script>
 

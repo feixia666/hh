@@ -2,13 +2,13 @@
     <div>
         <div class="title">周末去哪儿</div>
         <ul>
-            <li class="item border-bottom">
+            <li class="item border-bottom" v-for="item in list" :key="item.id">
                 <div class="item-img-wrapper">
-                    <img class="item-img" src="//gw.alicdn.com/bao/uploaded/i1/16969666/TB2xjEopVXXXXXJXXXXXXXXXXXX_!!16969666.jpg_500x500q90.jpg">
+                    <img class="item-img" :src="item.imgUrl">
                 </div>
                 <div class="item-info">
-                    <p class="item-title">长隆海洋世界</p>
-                    <p class="item-desc">阿萨德都是发生的广都是发生的广都是发生的广泛的个，阿斯蒂芬个</p>
+                    <p class="item-title">{{item.title}}</p>
+                    <p class="item-desc">{{item.desc}}</p>
                 </div>
             </li>
         </ul>
@@ -17,7 +17,9 @@
 
 <script>
 export default {
-    
+    props: {
+        list: Array
+    }
 }
 </script>
 
@@ -32,7 +34,7 @@ export default {
 .item-img-wrapper{
     overflow hidden
     height 0
-    padding-bottom 33.9%
+    padding-bottom 37.09%
     .item-img{
         width 100%
     }
