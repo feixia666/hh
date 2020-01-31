@@ -14,6 +14,7 @@ module.exports = {
       config.resolve.alias
         // key,value自行定义，比如.set('@assets', resolve('src/assets'))
         .set('styles',resolve('src/assets/styles'))
+        .set('common', resolve('src/common'))
     },
     devServer: {
         proxy: {
