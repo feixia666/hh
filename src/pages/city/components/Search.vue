@@ -11,7 +11,8 @@
             <ul>
                 <li v-for="item in list" 
                     :key="item.id"
-                    class="search-item border-bottom">
+                    class="search-item border-bottom"
+                    @click="handleSelectCity(item.name)">
                     {{item.name}}
                 </li>
                 <li class="search-item border-bottom" v-show="!list.length">没有找到匹配数据</li>
@@ -56,6 +57,12 @@ export default {
                 }
                 this.list = result
             }, 100)
+        }
+    },
+    methods: {
+        handleSelectCity(name){
+            this.$store.commit('changeCity', name)
+            this.$router.push('/')
         }
     },
     mounted () {
